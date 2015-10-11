@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/anthonymonori/Projects/Dev/POSA-15/assignments/A1-Android-App/app/libs/robotium-solo-5.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c6eaa5a81bf329a6ed01f83deed2e8dc6158f030">
+        <dex dex="/Users/anthonymonori/Projects/Dev/POSA-15/assignments/A1-Android-App/app/build/intermediates/pre-dexed/androidTest/debug/robotium-solo-5.5.2-053168a82b2e32f451461b526598cf90d911cd61.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\dkanjamo\.gradle\caches\modules-2\files-2.1\com.jayway.android.robotium\robotium-solo\5.2.1\56ab8d87d966a067ee3795ee137fbd51b6581ec9\robotium-solo-5.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="56ab8d87d966a067ee3795ee137fbd51b6581ec9">
+        <dex dex="D:\AndroidStudioProjects\Lab6_NotificationsLab\app\build\intermediates\pre-dexed\debug\robotium-solo-5.2.1-e6d6a158121ed66c33338dcd2b67c3b5e5153a83.jar" />
+    </item>
+
+</items>
