@@ -1,0 +1,69 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:2:1-39:12
+	package
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:3:5-24
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:5:5-30
+	android:versionCode
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:9:9-38
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:8:9-35
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml
+application
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:11:5-37:19
+	android:allowBackup
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:12:9-35
+	android:icon
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:13:9-42
+activity#edu.vandy.view.PalantiriActivity
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:14:9-21:20
+	android:label
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:16:13-60
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:15:13-51
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:17:13-20:29
+action#android.intent.action.MAIN
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:19:17-77
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:19:27-74
+activity#edu.vandy.view.GazingSimulationActivity
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:23:9-30:20
+	android:label
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:25:13-57
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:24:13-58
+intent-filter#android.intent.action.GAZING_SIMULATION+android.intent.category.DEFAULT
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:26:13-29:29
+action#android.intent.action.GAZING_SIMULATION
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:27:25-79
+category#android.intent.category.DEFAULT
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:28:17-76
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:28:27-73
+service#edu.vandy.model.service.PalantiriService
+ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:33:9-36:19
+	android:process
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:35:12-46
+	android:name
+		ADDED from /Users/anthonymonori/Projects/Dev/coursera-android-specialisation-complete/Lab10_AsyncLab/app/src/main/AndroidManifest.xml:34:12-58
