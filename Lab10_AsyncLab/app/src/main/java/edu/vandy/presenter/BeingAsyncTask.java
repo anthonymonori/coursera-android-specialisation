@@ -62,9 +62,7 @@ public class BeingAsyncTask
             try {
                 // Break out of the loop if the BeingAsyncTask has
                 // been cancelled.
-                // TODO -- you fill in here by replacing "false" with
-                // the appropriate method call to an AsyncTask method.
-                if (false) {
+                if (isCancelled()) {
                     // If we've been instructed to stop gazing, notify
                     // the UI and exit gracefully.
                     presenter.mView.get().threadShutdown(mIndex);
@@ -72,8 +70,7 @@ public class BeingAsyncTask
                 }
 
                 // Show that we're waiting on the screen.
-                // TODO -- you fill in here with the appropriate
-                // call to an AsyncTask method.
+                publishProgress(presenter.mView.get().markWaiting(mIndex));
 
                 // Get a Palantir - this call blocks if there are no
                 // available Palantiri.
@@ -92,25 +89,23 @@ public class BeingAsyncTask
                     break;
 
                 // Mark it as used on the screen.
-                // TODO -- you fill in here with the appropriate
-                // call to an AsyncTask method.
+                publishProgress(presenter.mView.get().markUsed(palantir.getId()));
 
                 // Show that we're gazing on the screen.
-                // TODO -- you fill in here with the appropriate
-                // call to an AsyncTask method.
+                publishProgress(presenter.mView.get().markGazing(mIndex));
 
                 // Gaze at my Palantir for the alloted time.
-                palantir.gaze();
+                if (palantir != null) {
+                    palantir.gaze();
+                }
 
                 // Show that we're no longer gazing.
-                // TODO -- you fill in here with the appropriate
-                // call to an AsyncTask method.
                 Utils.pauseThread(500);
+                publishProgress(presenter.mView.get().markIdle(mIndex));
 
                 // Mark the Palantir as being free.
-                // TODO -- you fill in here with the appropriate call
-                // to an AsyncTask method.
                 Utils.pauseThread(500);
+                publishProgress(presenter.mView.get().markFree(palantir.getId()));
 
                 // Tell the double-checker that we're about to
                 // give up a Palantir.
@@ -145,9 +140,12 @@ public class BeingAsyncTask
      */
     @Override
     public void onProgressUpdate(Runnable ...runnableCommands) {
-        // TODO -- you fill in here with the appropriate call to
         // the runnableCommands that will cause the progress
         // update to be displayed in the UI thread.
+        for (Runnable runnable :
+                runnableCommands) {
+            runnable.run();
+        }
     }
 
     /**

@@ -16,12 +16,12 @@ import edu.vandy.utils.Options;
  * Presenter.
  */
 public class PalantiriModel
-       implements MVP.ProvidedModelOps {
+        implements MVP.ProvidedModelOps {
     /**
      * Used for Android debugging.
      */
-    private final static String TAG = 
-        PalantiriModel.class.getName();
+    private final static String TAG =
+            PalantiriModel.class.getName();
 
     /**
      * Mediates concurrent access of multiple Middle-Earth Beings to a
@@ -33,7 +33,7 @@ public class PalantiriModel
      * Hook method called when a new instance of PalantiriModel is
      * created.  One time initialization code goes here, e.g., storing
      * a WeakReference to the Presenter.
-     * 
+     *
      * @param presenter
      *            A reference to the Presenter layer.
      */
@@ -62,18 +62,18 @@ public class PalantiriModel
      */
     @Override
     public void makePalantiri(int palantiriCount) {
-    	// Create a list to hold the generated Palantiri.
+        // Create a list to hold the generated Palantiri.
         final List<Palantir> palantiri =
-            new ArrayList<Palantir>(palantiriCount);
+                new ArrayList<Palantir>(palantiriCount);
 
         // Create a new Random number generator.
         final Random random = new Random();
 
         // Create and add each new Palantir into the list.  The id of
         // each Palantir is its position in the list.
-        for (int i = 0; i < palantiriCount; ++i) 
+        for (int i = 0; i < palantiriCount; ++i)
             palantiri.add(new Palantir(i,
-                                       random));
+                    random));
 
         // Create a PalantiriManager that is used to mediate
         // concurrent access to the List of Palantiri.

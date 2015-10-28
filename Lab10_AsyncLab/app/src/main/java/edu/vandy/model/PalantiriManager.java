@@ -1,8 +1,10 @@
 package edu.vandy.model;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Defines a mechanism that mediates concurrent access to a fixed
@@ -40,7 +42,14 @@ public class PalantiriManager {
         // "true" to indicate it's available, and initialize the
         // Semaphore to use a "fair" implementation that mediates
         // concurrent access to the given Palantiri.
-        // TODO -- you fill in here.
+        mPalantiriMap = new ConcurrentHashMap<>(palantiri.size());
+
+        for(Palantir palantir : palantiri) {
+            mPalantiriMap.put(palantir, true);
+        }
+
+        //semaphore action required
+        mAvailablePalantiri = new Semaphore(palantiri.size(), true);
     }
 
     /**
@@ -55,7 +64,23 @@ public class PalantiriManager {
         // key with "false" to indicate the Palantir isn't available
         // and then return that palantir to the client.  There should
         // be *no* synchronized statements in this method.
-        // TODO -- you fill in here.
+        boolean initialFound = false;
+
+        mAvailablePalantiri.acquireUninterruptibly();
+
+        for (Map.Entry<Palantir, Boolean> entry : mPalantiriMap.entrySet()) {
+
+            Palantir key = entry.getKey();
+            Boolean value = entry.getValue();
+
+            if(value) {
+                AtomicBoolean aBoolean = new AtomicBoolean(true);
+                aBoolean.set(false);
+                entry.setValue(aBoolean.get());
+                return key;
+            }
+
+        }
 
         // This shouldn't happen, but we need this here to make the
         // compiler happy.
@@ -71,7 +96,9 @@ public class PalantiriManager {
         // palantir key and release the Semaphore if all works
         // properly.  There should be *no* synchronized statements in
         // this method.
-        // TODO -- you fill in here.
+        mPalantiriMap.put(palantir, true);
+        mAvailablePalantiri.release();
+
     }
 
     /*

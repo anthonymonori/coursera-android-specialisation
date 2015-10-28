@@ -4,6 +4,8 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -122,9 +124,8 @@ public class PalantiriPresenter
             public Thread newThread(Runnable runnable) {
                 // Create a new BeingThread whose name uniquely
                 // identifies each Being.
-                // TODO -- you fill in here by replacing "return null"
-                // with the appropriate code.
-                return null;
+
+                return new BeingThread(runnable, mBeingCount.getAndIncrement(), new PalantiriPresenter());
             }
         };
 
@@ -360,7 +361,15 @@ public class PalantiriPresenter
         // of Beings, (2) a LinkedBlockingQueue, and (3) the
         // ThreadFactory instance.  Finally, iterate through all the
         // BeingTasks and execute them on the threadPoolExecutor.
-        // TODO - You fill in here.
+
+        mBeingsTasks = new ArrayList<>(beingCount);
+        for (int i = 0; i < beingCount; i++) {
+            mBeingsTasks.add(new BeingAsyncTask(i, mExitBarrier));
+        }
+        ExecutorService poolExecutor = Executors.newFixedThreadPool(beingCount, mThreadFactory);
+        for (BeingAsyncTask being : mBeingsTasks) {
+            being.executeOnExecutor(poolExecutor, this);
+        }
     }
 
     /**
