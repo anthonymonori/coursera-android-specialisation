@@ -78,9 +78,7 @@ public class DisplayImagesActivity
         configureGridView(imageGrid);
         
         // Initialize the image loader
-        mLoader = new ImageLoader(getResources()
-                                    .getDrawable
-                                       (R.drawable.loading));
+        mLoader = new ImageLoader(getResources().getDrawable(R.drawable.loading));
 
         // Retrieve the file path to the directory containing the
         // images to display from the intent.

@@ -1,10 +1,14 @@
 package vandy.mooc.model;
 
 import java.lang.ref.WeakReference;
+import java.net.URL;
 
 import vandy.mooc.MVP;
+import vandy.mooc.common.Utils;
+
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 
 /**
  * This class plays the "Model" role in the Model-View-Presenter (MVP)
@@ -74,7 +78,22 @@ public class ImageDownloadsModel
     public Uri downloadImage(Context context,
                              Uri url,
                              Uri directoryPathname) {
-        // @@ TODO -- You fill in here, replacing "null" with the appropriate code.
-    	return null;
+        if (!Utils.isExternalStorageWritable()) {
+            Log.d(TAG,
+                    "external storage is not writable");
+            return null;
+        }
+
+        // Create an output file and save the image referenced
+        // at the URL into it.
+        Uri saved;
+        try{
+            saved = Utils.createDirectoryAndSaveFile(context, new URL(url.toString()), Uri.parse(url.getLastPathSegment()), directoryPathname);
+            return saved;
+        }
+        catch(Exception e) {
+        }
+
+        return null;
     }
 }

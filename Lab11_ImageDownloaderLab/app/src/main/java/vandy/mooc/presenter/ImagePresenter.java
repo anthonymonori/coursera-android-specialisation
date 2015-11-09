@@ -9,7 +9,10 @@ import java.util.Date;
 import vandy.mooc.MVP;
 import vandy.mooc.common.GenericPresenter;
 import vandy.mooc.common.Utils;
+import vandy.mooc.model.ImageDownloaderAsyncTask;
 import vandy.mooc.model.ImageDownloadsModel;
+import vandy.mooc.utils.loader.ImageLoaderThreadPool;
+
 import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
@@ -101,7 +104,7 @@ public class ImagePresenter
         // "this" to provide ImageDownloadsModel with this MVP.RequiredModelOps
         // instance.
         super.onCreate(ImageDownloadsModel.class,
-                       this);
+                this);
     }
 
     /**
@@ -196,7 +199,10 @@ public class ImagePresenter
             // concurrently via the AsyncTask.THREAD_POOL_EXECUTOR and
             // executeOnExecutor().
 
-            // TODO -- you fill in here.
+            ImageLoaderThreadPool imageLoaderThreadPool = new ImageLoaderThreadPool();
+            for (Uri uri : mUrlList) {
+                new ImageDownloaderAsyncTask(uri, mDirectoryPathname).executeOnExecutor(imageLoaderThreadPool.MY_THREAD_POOL_EXECUTOR, this);
+            }
         }
     }
 
